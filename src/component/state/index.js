@@ -112,7 +112,8 @@ state.default = {
   },
   search: false,
   modal: false,
-  menu: false
+  menu: false,
+  sync: { url: '', password: '' }
 };
 
 state.minMax = {
@@ -263,7 +264,7 @@ state.get = {
   default: () => { return JSON.parse(JSON.stringify(state.default)); },
   minMax: () => { return JSON.parse(JSON.stringify(state.minMax)); },
   step: () => { return JSON.parse(JSON.stringify(state.step)); },
-  option: () => { return JSON.parse(JSON.stringify(state.option)); }
+  option: () => { return JSON.parse(JSON.stringify(state.option)); },
 };
 
 state.set = {
@@ -276,6 +277,7 @@ state.set = {
       state.current.bookmark = dataToRestore.state.bookmark;
       state.current.group = dataToRestore.state.group;
       state.current.toolbar = dataToRestore.state.toolbar;
+      state.current.sync = dataToRestore.state.sync;
       console.log('setup restored');
 
     },

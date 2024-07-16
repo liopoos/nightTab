@@ -14,13 +14,18 @@ import { Control_helperText } from '../../control/helperText';
 import { Control_inputButton } from '../../control/inputButton';
 
 import { node } from '../../../utility/node';
+import {Control_text} from "../../control";
+import {state} from "../../state";
+import {header} from "../../header";
+import {headerSetting} from "../headerSetting";
 
 const dataSetting = {};
 
 dataSetting.control = {
   restore: {},
   backup: {},
-  clear: {}
+  clear: {},
+  sync: {}
 };
 
 dataSetting.restore = (parent) => {
@@ -193,5 +198,77 @@ dataSetting.clear = (parent) => {
   );
 
 };
+
+dataSetting.sync = (parent) => {
+
+  dataSetting.control.sync.url = new Control_text({
+    object: state.get.current(),
+    path: 'sync.url',
+    id: 'sync-url',
+    value: state.get.current().sync.url,
+    placeholder: message.get('menuContentDataSyncLinkPlaceholder'),
+    labelText: message.get('menuContentDataSyncLinkLabel'),
+    action: () => {
+      data.save();
+    }
+  });
+
+  dataSetting.control.sync.password = new Control_text({
+    object: state.get.current(),
+    path: 'sync.password',
+    id: 'sync-password',
+    value: state.get.current().sync.password,
+    placeholder: message.get('menuContentDataSyncPasswordPlaceholder'),
+    labelText: message.get('menuContentDataSyncPasswordLabel'),
+    inputType: 'password',
+    action: () => {
+      data.save();
+    }
+  });
+
+  dataSetting.control.sync.import = new Button({
+    text: message.get('menuContentDataSyncImport'),
+    style: ['line'],
+    func: () => {
+      data.import();
+    }
+  });
+
+  dataSetting.control.sync.export = new Button({
+    text: message.get('menuContentDataSyncExport'),
+    style: ['line'],
+    func: () => {
+      data.export();
+    }
+  });
+
+  dataSetting.control.sync.helper = new Control_helperText({
+    text: [
+      message.get('menuContentDataSyncHelperPara2')
+    ]
+  });
+
+  parent.appendChild(
+    node('div', [
+      dataSetting.control.sync.url.wrap(),
+      dataSetting.control.sync.password.wrap(),
+      dataSetting.control.sync.helper.wrap(),
+      form.wrap({
+        children: [
+          form.inline({
+            gap: 'small',
+            equalGap: true,
+            wrap: true,
+            children: [
+              dataSetting.control.sync.export.wrap(),
+              dataSetting.control.sync.import.wrap()
+            ]
+          })
+        ]
+      }),
+    ])
+  );
+};
+
 
 export { dataSetting };

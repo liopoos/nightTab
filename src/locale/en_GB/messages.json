@@ -223,6 +223,10 @@
     "message": "Clear",
     "description": "Label for the settings menu navigation."
   },
+  "menuNavDataSubNavSync": {
+    "message": "Sync",
+    "description": "Label for the settings menu navigation."
+  },
   "menuNavLanguageLabel": {
     "message": "Language",
     "description": "Label for the settings menu navigation."
@@ -1802,6 +1806,38 @@
   "menuContentDataClearHelperPara2": {
     "message": "Alternatively, it is possible to wipe all settings but keep the current Bookmarks and Groups.",
     "description": "Helper text for clear all data."
+  },
+  "menuContentDataSyncLinkPlaceholder": {
+    "message": "https://example.com/sync",
+    "description": "Placeholder for data sync link."
+  },
+  "menuContentDataSyncLinkLabel": {
+    "message": "Sync URL",
+    "description": "Label for data sync link."
+  },
+  "menuContentDataSyncPasswordPlaceholder": {
+    "message": "",
+    "description": "Placeholder for data sync link."
+  },
+  "menuContentDataSyncPasswordLabel": {
+    "message": "Password",
+    "description": "Label for data sync password."
+  },
+  "menuContentDataSyncImport": {
+    "message": "Sync data from server",
+    "description": "Label for data sync."
+  },
+  "menuContentDataSyncExport": {
+    "message": "Sync to remote server",
+    "description": "Label for data sync."
+  },
+  "menuContentDataSyncHelperPara1": {
+    "message": "Save the data to remote server.",
+    "description": "Helper text for sync."
+  },
+  "menuContentDataSyncHelperPara2": {
+    "message": "Passwords are not required.",
+    "description": "Helper text for sync."
   },
   "menuContentLanguageSelect": {
     "message": "Language",

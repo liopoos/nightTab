@@ -14,7 +14,8 @@ export const Control_text = function ({
   classList = [],
   labelText = 'Name',
   srOnly = false,
-  action = false
+  action = false,
+  inputType = 'text'
 } = {}) {
 
   this.label = form.label({
@@ -55,6 +56,8 @@ export const Control_text = function ({
   if (placeholder) {
     this.text.placeholder = placeholder;
   }
+
+  this.text.type = inputType;
 
   this.update = () => {
 
