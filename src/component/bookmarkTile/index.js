@@ -46,6 +46,12 @@ const BookmarkTile = function({
           text: complexNode({ tag: 'div', text: bookmarkData.link.display.name.text, attr: [{ key: 'class', value: 'bookmark-display-name-text' }] })
         }
       },
+      corner: {
+        corner: node('div|class:bookmark-corner'),
+        wrap: node('div|class:bookmark-corner-wrap'),
+        icon: node('div|class:bookmark-corner-icon'),
+      },
+      repository: node('a|class:bookmark-corner-link'),
       background: {
         wrap: node('div|class:bookmark-background-wrap'),
         image: node('div|class:bookmark-background-image'),
@@ -541,6 +547,13 @@ const BookmarkTile = function({
 
       this.element.back.appendChild(this.element.url.url);
 
+    }
+
+    if (typeof bookmarkData.link.repository != "undefined" && isValidString(bookmarkData.link.repository)) {
+      this.element.content.repository.setAttribute('href', trimString(bookmarkData.link.repository));
+      this.element.content.corner.wrap.appendChild(this.element.content.repository);
+      this.element.content.corner.corner.appendChild(this.element.content.corner.wrap);
+      this.element.front.appendChild(this.element.content.corner.corner);
     }
 
     if (state.get.current().bookmark.edit) {

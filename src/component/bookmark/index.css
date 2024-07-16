@@ -1120,3 +1120,33 @@
 .is-theme-background-type-accent .bookmark-sort-placeholder {
   box-shadow: var(--edge-on-accent);
 }
+
+.bookmark-corner {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 0;
+  right: 0;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.6,.6,0,1);
+  border-radius: 0 8px;
+  box-shadow: 0 2px 6px #80808014, 0 2px 2px #3a3a3a14;
+}
+
+.bookmark-front:hover .bookmark-corner {
+  width: calc(calc(var(--bookmark-size) / 10) * 2.5px);
+  height: calc(calc(var(--bookmark-size) / 10) * 2.5px);
+  transition-duration: .3s;
+  transition-delay: .1s;
+}
+
+.bookmark-corner-link {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  bottom: 2px;
+  right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+  background-color: rgb(var(--theme-accent));
+}

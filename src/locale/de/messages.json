@@ -2774,5 +2774,13 @@
   "controlColorMixerSliderB": {
     "message": "Blau",
     "description": "Label for colour control blue."
+  },
+  "bookmarkFormRepositoryUrlPlaceholder": {
+    "message": "https://www.example.com/",
+    "description": "Placeholder for bookmark repository url."
+  },
+  "bookmarkFormRepositoryUrlLabel": {
+    "message": "Repository",
+    "description": "Label for bookmark repository url."
   }
 }

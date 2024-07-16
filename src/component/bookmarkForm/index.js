@@ -104,6 +104,17 @@ export const BookmarkForm = function({
         this.preview.update.assemble(bookmarkData);
       }
     }),
+    repository: new Control_text({
+      object: bookmarkData.link,
+      path: 'repository',
+      id: 'repository',
+      value: bookmarkData.link.repository,
+      placeholder: message.get('bookmarkFormRepositoryUrlPlaceholder'),
+      labelText: message.get('bookmarkFormRepositoryUrlLabel'),
+      action: () => {
+        this.preview.update.assemble(bookmarkData);
+      }
+    }),
     display: {
       alignment: new Control_radioGrid({
         object: bookmarkData.link,
@@ -810,7 +821,8 @@ export const BookmarkForm = function({
           children: [
             form.indent({
               children: [
-                this.control.bookmark.url.wrap()
+                this.control.bookmark.url.wrap(),
+                this.control.bookmark.repository.wrap()
               ]
             })
           ]
