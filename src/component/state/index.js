@@ -113,7 +113,7 @@ state.default = {
   search: false,
   modal: false,
   menu: false,
-  sync: { url: '', password: '' }
+  remote: { url: '', password: '' }
 };
 
 state.minMax = {
@@ -277,7 +277,7 @@ state.set = {
       state.current.bookmark = dataToRestore.state.bookmark;
       state.current.group = dataToRestore.state.group;
       state.current.toolbar = dataToRestore.state.toolbar;
-      state.current.sync = dataToRestore.state.sync;
+      state.current.remote = dataToRestore.state.remote;
       console.log('setup restored');
 
     },

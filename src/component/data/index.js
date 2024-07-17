@@ -455,6 +455,24 @@ data.feedback.animation = {
   }
 };
 
+data.remote = {
+  import: async () => {
+    let url = state.get.current().remote.url;
+    try {
+      const response = await fetch(url, {method: 'POST'});
+      const jsonData = await response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      jsonData.data.remote = state.get.current().remote;
+      menu.close();
+      data.import.render(JSON.stringify(jsonData.data));
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+
 data.init = () => {
   data.restore(data.load());
 };

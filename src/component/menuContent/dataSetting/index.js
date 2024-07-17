@@ -1,23 +1,21 @@
-import { message } from '../../message';
+import {message} from '../../message';
 
-import { data } from '../../data';
-import { menu } from '../../menu';
+import {data} from '../../data';
+import {menu} from '../../menu';
 
 import * as form from '../../form';
 
-import { Button } from '../../button';
-import { Alert } from '../../alert';
-import { DropFile } from '../../dropFile';
-import { Link } from '../../link';
+import {Button} from '../../button';
+import {Alert} from '../../alert';
+import {DropFile} from '../../dropFile';
+import {Link} from '../../link';
 
-import { Control_helperText } from '../../control/helperText';
-import { Control_inputButton } from '../../control/inputButton';
+import {Control_helperText} from '../../control';
+import {Control_inputButton} from '../../control';
 
-import { node } from '../../../utility/node';
-import {Control_text} from "../../control";
-import {state} from "../../state";
-import {header} from "../../header";
-import {headerSetting} from "../headerSetting";
+import {node} from '../../../utility/node';
+import {Control_text} from '../../control';
+import {state} from '../../state';
 
 const dataSetting = {};
 
@@ -25,7 +23,7 @@ dataSetting.control = {
   restore: {},
   backup: {},
   clear: {},
-  sync: {}
+  remote: {}
 };
 
 dataSetting.restore = (parent) => {
@@ -199,60 +197,54 @@ dataSetting.clear = (parent) => {
 
 };
 
-dataSetting.sync = (parent) => {
+dataSetting.remote = (parent) => {
 
-  dataSetting.control.sync.url = new Control_text({
+  dataSetting.control.remote.url = new Control_text({
     object: state.get.current(),
-    path: 'sync.url',
-    id: 'sync-url',
-    value: state.get.current().sync.url,
-    placeholder: message.get('menuContentDataSyncLinkPlaceholder'),
-    labelText: message.get('menuContentDataSyncLinkLabel'),
+    path: 'remote.url',
+    id: 'remote-url',
+    value: state.get.current().remote.url,
+    placeholder: message.get('menuContentDataRemoteLinkPlaceholder'),
+    labelText: message.get('menuContentDataRemoteLinkLabel'),
     action: () => {
       data.save();
     }
   });
 
-  dataSetting.control.sync.password = new Control_text({
+  dataSetting.control.remote.password = new Control_text({
     object: state.get.current(),
-    path: 'sync.password',
-    id: 'sync-password',
-    value: state.get.current().sync.password,
-    placeholder: message.get('menuContentDataSyncPasswordPlaceholder'),
-    labelText: message.get('menuContentDataSyncPasswordLabel'),
+    path: 'remote.password',
+    id: 'remote-password',
+    value: state.get.current().remote.password,
+    placeholder: message.get('menuContentDataRemotePasswordPlaceholder'),
+    labelText: message.get('menuContentDataRemotePasswordLabel'),
     inputType: 'password',
     action: () => {
       data.save();
     }
   });
 
-  dataSetting.control.sync.import = new Button({
-    text: message.get('menuContentDataSyncImport'),
+  dataSetting.control.remote.import = new Button({
+    text: message.get('menuContentDataRemoteImport'),
     style: ['line'],
     func: () => {
-      data.import();
+      data.remote.import().then(() => {
+        console.log('remote data to load');
+      });
     }
   });
 
-  dataSetting.control.sync.export = new Button({
-    text: message.get('menuContentDataSyncExport'),
-    style: ['line'],
-    func: () => {
-      data.export();
-    }
-  });
-
-  dataSetting.control.sync.helper = new Control_helperText({
+  dataSetting.control.remote.helper = new Control_helperText({
     text: [
-      message.get('menuContentDataSyncHelperPara2')
+      message.get('menuContentDataRemoteHelperPara2')
     ]
   });
 
   parent.appendChild(
     node('div', [
-      dataSetting.control.sync.url.wrap(),
-      dataSetting.control.sync.password.wrap(),
-      dataSetting.control.sync.helper.wrap(),
+      dataSetting.control.remote.url.wrap(),
+      dataSetting.control.remote.password.wrap(),
+      dataSetting.control.remote.helper.wrap(),
       form.wrap({
         children: [
           form.inline({
@@ -260,8 +252,7 @@ dataSetting.sync = (parent) => {
             equalGap: true,
             wrap: true,
             children: [
-              dataSetting.control.sync.export.wrap(),
-              dataSetting.control.sync.import.wrap()
+              dataSetting.control.remote.import.wrap(),
             ]
           })
         ]
@@ -271,4 +262,4 @@ dataSetting.sync = (parent) => {
 };
 
 
-export { dataSetting };
+export {dataSetting};

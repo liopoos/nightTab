@@ -223,8 +223,8 @@
     "message": "Clear",
     "description": "Label for the settings menu navigation."
   },
-  "menuNavDataSubNavSync": {
-    "message": "Sync",
+  "menuNavDataSubNavRemote": {
+    "message": "Remote",
     "description": "Label for the settings menu navigation."
   },
   "menuNavLanguageLabel": {
@@ -1807,37 +1807,33 @@
     "message": "Alternatively, it is possible to wipe all settings but keep the current Bookmarks and Groups.",
     "description": "Helper text for clear all data."
   },
-  "menuContentDataSyncLinkPlaceholder": {
-    "message": "https://example.com/sync",
-    "description": "Placeholder for data sync link."
+  "menuContentDataRemoteLinkPlaceholder": {
+    "message": "https://example.com/remote",
+    "description": "Placeholder for data remote link."
   },
-  "menuContentDataSyncLinkLabel": {
-    "message": "Sync URL",
-    "description": "Label for data sync link."
+  "menuContentDataRemoteLinkLabel": {
+    "message": "Remote URL",
+    "description": "Label for data remote link."
   },
-  "menuContentDataSyncPasswordPlaceholder": {
+  "menuContentDataRemotePasswordPlaceholder": {
     "message": "",
-    "description": "Placeholder for data sync link."
+    "description": "Placeholder for data remote link."
   },
-  "menuContentDataSyncPasswordLabel": {
+  "menuContentDataRemotePasswordLabel": {
     "message": "Password",
-    "description": "Label for data sync password."
+    "description": "Label for data remote password."
   },
-  "menuContentDataSyncImport": {
-    "message": "Sync data from server",
-    "description": "Label for data sync."
+  "menuContentDataRemoteImport": {
+    "message": "Import data from remote server",
+    "description": "Label for data remote."
   },
-  "menuContentDataSyncExport": {
-    "message": "Sync to remote server",
-    "description": "Label for data sync."
-  },
-  "menuContentDataSyncHelperPara1": {
+  "menuContentDataRemoteHelperPara1": {
     "message": "Save the data to remote server.",
-    "description": "Helper text for sync."
+    "description": "Helper text for remote."
   },
-  "menuContentDataSyncHelperPara2": {
+  "menuContentDataRemoteHelperPara2": {
     "message": "Passwords are not required.",
-    "description": "Helper text for sync."
+    "description": "Helper text for remote."
   },
   "menuContentLanguageSelect": {
     "message": "Language",

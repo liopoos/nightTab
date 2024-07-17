@@ -56,5 +56,8 @@
     "webpack-dev-server": "^4.7.3",
     "webpack-merge": "^5.8.0",
     "zip-webpack-plugin": "^4.0.1"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }
