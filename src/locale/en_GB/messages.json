@@ -1827,10 +1827,6 @@
     "message": "Import data from remote server",
     "description": "Label for data remote."
   },
-  "menuContentDataRemoteHelperPara1": {
-    "message": "Save the data to remote server.",
-    "description": "Helper text for remote."
-  },
   "menuContentDataRemoteHelperPara2": {
     "message": "Passwords are not required.",
     "description": "Helper text for remote."

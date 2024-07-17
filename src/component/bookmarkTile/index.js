@@ -549,7 +549,7 @@ const BookmarkTile = function({
 
     }
 
-    if (typeof bookmarkData.link.repository != "undefined" && isValidString(bookmarkData.link.repository)) {
+    if (typeof bookmarkData.link.repository != 'undefined' && isValidString(bookmarkData.link.repository)) {
       this.element.content.repository.setAttribute('href', trimString(bookmarkData.link.repository));
       this.element.content.corner.wrap.appendChild(this.element.content.repository);
       this.element.content.corner.corner.appendChild(this.element.content.corner.wrap);

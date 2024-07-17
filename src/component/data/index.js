@@ -459,14 +459,13 @@ data.remote = {
   import: async () => {
     let url = state.get.current().remote.url;
     try {
-      const response = await fetch(url, {method: 'POST'});
+      const response = await fetch(url);
       const jsonData = await response.json();
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      jsonData.data.remote = state.get.current().remote;
       menu.close();
-      data.import.render(JSON.stringify(jsonData.data));
+      data.import.render(JSON.stringify(jsonData));
     } catch (e) {
       console.log(e);
     }

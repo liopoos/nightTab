@@ -223,6 +223,10 @@
     "message": "清除",
     "description": "Label for the settings menu navigation."
   },
+  "menuNavDataSubNavRemote": {
+    "message": "远程",
+    "description": "Label for the settings menu navigation."
+  },
   "menuNavLanguageLabel": {
     "message": "语言",
     "description": "Label for the settings menu navigation."
@@ -1802,6 +1806,30 @@
   "menuContentDataClearHelperPara2": {
     "message": "或者，可以擦除所有设置但保留当前的书签和组。",
     "description": "Helper text for clear all data."
+  },
+  "menuContentDataRemoteLinkPlaceholder": {
+    "message": "https://example.com/sync",
+    "description": "Placeholder for data sync link."
+  },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "远程URL",
+    "description": "Label for data sync link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "",
+    "description": "Placeholder for data sync link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "密码",
+    "description": "Label for data sync password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "从远程服务器导入",
+    "description": "Label for data sync."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "请提供密码（如果需要）",
+    "description": "Helper text for sync."
   },
   "menuContentLanguageSelect": {
     "message": "语言",
