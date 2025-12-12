@@ -1803,6 +1803,30 @@
     "message": "વૈકલ્પિક રીતે, બધી સેટિંગ્સને સાફ કરવું શક્ય છે પરંતુ વર્તમાન બુકમાર્ક્સ અને જૂથો રાખો.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "રિમોટ URL",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "પાસવર્ડ દાખલ કરો",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "પાસવર્ડ",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "રિમોટ સર્વર પરથી ડેટા આયાત કરો",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "વર્તમાન ડેટા રિમોટ સર્વરમાં નિકાસ કરો",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "સિંક કરતા પહેલા બેઝ API URL (ઉદાહરણ તરીકે https://example.com) અને પાસવર્ડ દાખલ કરો.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "ભાષા",
     "description": "Select for language."

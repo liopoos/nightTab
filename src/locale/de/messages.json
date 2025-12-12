@@ -1803,6 +1803,30 @@
     "message": "Alternativ ist es möglich, alle Einstellungen zu löschen, aber die aktuellen Lesezeichen und Gruppen beizubehalten.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "Remote-URL",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Passwort eingeben",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Passwort",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Daten vom Remote-Server importieren",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Aktuelle Daten an Remote-Server exportieren",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Geben Sie vor der Synchronisierung die Basis-API-URL (z. B. https://example.com) und das Passwort ein.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Sprache",
     "description": "Select for language."

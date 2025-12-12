@@ -1803,6 +1803,30 @@
     "message": "Alternatively, it is possible to wipe all settings but keep the current Bookmarks and Groups.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "Remote URL",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Enter password",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Password",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Import data from remote server",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Export current data to remote server",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Enter the base API URL (for example https://example.com) and provide the password before syncing data.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Language",
     "description": "Select for language."

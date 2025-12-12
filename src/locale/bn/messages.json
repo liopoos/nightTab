@@ -1803,6 +1803,30 @@
     "message": "বিকল্পভাবে, সমস্ত সেটিংস মুছে ফেলা সম্ভব কিন্তু বর্তমান বুকমার্ক এবং গোষ্ঠীগুলি রাখা সম্ভব৷",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "রিমোট URL",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "পাসওয়ার্ড লিখুন",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "পাসওয়ার্ড",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "রিমোট সার্ভার থেকে ডেটা ইমপোর্ট করুন",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "বর্তমান ডেটা রিমোট সার্ভারে এক্সপোর্ট করুন",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "সিঙ্ক করার আগে বেস API URL (উদাহরণস্বরূপ https://example.com) এবং পাসওয়ার্ড প্রদান করুন।",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "ভাষা",
     "description": "Select for language."

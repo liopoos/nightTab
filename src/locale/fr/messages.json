@@ -1803,6 +1803,30 @@
     "message": "Alternativement, il est possible d'effacer tous les paramètres mais de conserver les signets et les groupes actuels.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "URL distante",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Saisir le mot de passe",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Mot de passe",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Importer les données depuis le serveur distant",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Exporter les données actuelles vers le serveur distant",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Saisissez l’URL de base de l’API (par exemple https://example.com) ainsi que le mot de passe avant de synchroniser les données.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Langue",
     "description": "Select for language."

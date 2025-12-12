@@ -228,9 +228,27 @@ dataSetting.remote = (parent) => {
     text: message.get('menuContentDataRemoteImport'),
     style: ['line'],
     func: () => {
-      data.remote.import().then(() => {
-        console.log('remote data to load');
-      });
+      data.remote.import()
+        .then(() => {
+          console.log('remote data to load');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  });
+
+  dataSetting.control.remote.export = new Button({
+    text: message.get('menuContentDataRemoteExport'),
+    style: ['line'],
+    func: () => {
+      data.remote.export()
+        .then(() => {
+          console.log('remote data saved');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   });
 
@@ -253,10 +271,11 @@ dataSetting.remote = (parent) => {
             wrap: true,
             children: [
               dataSetting.control.remote.import.wrap(),
+              dataSetting.control.remote.export.wrap()
             ]
           })
         ]
-      }),
+      })
     ])
   );
 };

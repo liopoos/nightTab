@@ -1803,6 +1803,30 @@
     "message": "Bilang kahalili, posibleng i-wipe ang lahat ng setting ngunit panatilihin ang kasalukuyang Mga Bookmark at Grupo.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "URL ng remote server",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Ilagay ang password",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Password",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Mag-import ng data mula sa remote server",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "I-export ang kasalukuyang data sa remote server",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Bago mag-sync, ilagay ang base API URL (halimbawa https://example.com) at ang password.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Wika",
     "description": "Select for language."

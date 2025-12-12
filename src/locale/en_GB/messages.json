@@ -1816,7 +1816,7 @@
     "description": "Label for data remote link."
   },
   "menuContentDataRemotePasswordPlaceholder": {
-    "message": "",
+    "message": "Enter password",
     "description": "Placeholder for data remote link."
   },
   "menuContentDataRemotePasswordLabel": {
@@ -1827,8 +1827,12 @@
     "message": "Import data from remote server",
     "description": "Label for data remote."
   },
+  "menuContentDataRemoteExport": {
+    "message": "Export current data to remote server",
+    "description": "Label for remote data export button."
+  },
   "menuContentDataRemoteHelperPara2": {
-    "message": "Passwords are not required.",
+    "message": "Enter the base API URL (for example https://example.com) and provide the password before syncing data.",
     "description": "Helper text for remote."
   },
   "menuContentLanguageSelect": {

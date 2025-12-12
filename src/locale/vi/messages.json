@@ -1803,6 +1803,30 @@
     "message": "Ngoài ra, có thể xóa tất cả cài đặt nhưng vẫn giữ Dấu trang và Nhóm hiện tại.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "URL từ xa",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Nhập mật khẩu",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Mật khẩu",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Nhập dữ liệu từ máy chủ từ xa",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Xuất dữ liệu hiện tại sang máy chủ từ xa",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Trước khi đồng bộ, hãy nhập URL cơ sở của API (ví dụ https://example.com) và mật khẩu.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Ngôn ngữ",
     "description": "Select for language."

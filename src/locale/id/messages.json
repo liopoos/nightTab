@@ -1803,6 +1803,30 @@
     "message": "Atau, dimungkinkan untuk menghapus semua pengaturan tetapi tetap menggunakan Bookmark dan Grup saat ini.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "URL remote",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Masukkan kata sandi",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Kata sandi",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Impor data dari server remote",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Ekspor data saat ini ke server remote",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Sebelum sinkronisasi, masukkan URL dasar API (misalnya https://example.com) dan kata sandi.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Bahasa",
     "description": "Select for language."

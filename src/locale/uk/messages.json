@@ -1803,6 +1803,30 @@
     "message": "Крім того, можна стерти всі налаштування, але зберегти поточні закладки та групи.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "Віддалена URL-адреса",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Введіть пароль",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Пароль",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Імпортувати дані з віддаленого сервера",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Експортувати поточні дані на віддалений сервер",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Перш ніж синхронізувати, вкажіть базову URL-адресу API (наприклад https://example.com) та пароль.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Мову",
     "description": "Select for language."

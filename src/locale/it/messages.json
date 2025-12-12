@@ -1803,6 +1803,30 @@
     "message": "In alternativa, è possibile cancellare tutte le impostazioni ma mantenere i segnalibri e i gruppi correnti.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "URL remoto",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Inserisci la password",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Password",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Importa i dati dal server remoto",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Esporta i dati correnti sul server remoto",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Prima di sincronizzare, inserisci l'URL base dell'API (ad esempio https://example.com) e la password.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Lingua",
     "description": "Select for language."

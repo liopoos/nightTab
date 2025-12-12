@@ -1803,6 +1803,30 @@
     "message": "वैकल्पिक रूप से, सभी सेटिंग्स को मिटा देना संभव है लेकिन वर्तमान बुकमार्क और समूह रखें।",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "रिमोट URL",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "पासवर्ड दर्ज करें",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "पासवर्ड",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "रिमोट सर्वर से डेटा आयात करें",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "वर्तमान डेटा को रिमोट सर्वर पर निर्यात करें",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "सिंक करने से पहले बेस API URL (उदाहरण: https://example.com) और पासवर्ड दर्ज करें।",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "भाषा",
     "description": "Select for language."

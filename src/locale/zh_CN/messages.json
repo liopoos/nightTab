@@ -1816,7 +1816,7 @@
     "description": "Label for data sync link."
   },
   "menuContentDataRemotePasswordPlaceholder": {
-    "message": "",
+    "message": "请输入密码",
     "description": "Placeholder for data sync link."
   },
   "menuContentDataRemotePasswordLabel": {
@@ -1827,8 +1827,12 @@
     "message": "从远程服务器导入",
     "description": "Label for data sync."
   },
+  "menuContentDataRemoteExport": {
+    "message": "将当前数据导出到远程服务器",
+    "description": "Label for remote data export button."
+  },
   "menuContentDataRemoteHelperPara2": {
-    "message": "请提供密码（如果需要）",
+    "message": "请输入远程 API 的基础地址（例如 https://example.com）并提供访问密码后再进行同步。",
     "description": "Helper text for sync."
   },
   "menuContentLanguageSelect": {

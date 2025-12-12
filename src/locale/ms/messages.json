@@ -1803,6 +1803,30 @@
     "message": "Sebagai alternatif, anda boleh memadam semua tetapan tetapi mengekalkan Penanda Halaman dan Kumpulan semasa.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "URL jauh",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Masukkan kata laluan",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Kata laluan",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Import data dari pelayan jauh",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Eksport data semasa ke pelayan jauh",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Sebelum menyelaraskan, masukkan URL asas API (contohnya https://example.com) dan kata laluan.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Bahasa",
     "description": "Select for language."

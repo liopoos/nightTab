@@ -1803,6 +1803,30 @@
     "message": "Alternativamente, es posible borrar todas las configuraciones pero mantener los marcadores y grupos actuales.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "URL remota",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Introduce la contraseña",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Contraseña",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Importar datos desde el servidor remoto",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Exportar los datos actuales al servidor remoto",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Antes de sincronizar, introduce la URL base de la API (por ejemplo https://example.com) y la contraseña.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Idioma",
     "description": "Select for language."

@@ -1803,6 +1803,30 @@
     "message": "В качестве альтернативы можно стереть все настройки, но сохранить текущие закладки и группы.",
     "description": "Helper text for clear all data."
   },
+  "menuContentDataRemoteLinkLabel": {
+    "message": "Удалённый URL",
+    "description": "Label for data remote link."
+  },
+  "menuContentDataRemotePasswordPlaceholder": {
+    "message": "Введите пароль",
+    "description": "Placeholder for data remote link."
+  },
+  "menuContentDataRemotePasswordLabel": {
+    "message": "Пароль",
+    "description": "Label for data remote password."
+  },
+  "menuContentDataRemoteImport": {
+    "message": "Импортировать данные с удалённого сервера",
+    "description": "Label for data remote."
+  },
+  "menuContentDataRemoteExport": {
+    "message": "Экспортировать текущие данные на удалённый сервер",
+    "description": "Label for remote data export button."
+  },
+  "menuContentDataRemoteHelperPara2": {
+    "message": "Перед синхронизацией укажите базовый URL API (например https://example.com) и пароль.",
+    "description": "Helper text for remote."
+  },
   "menuContentLanguageSelect": {
     "message": "Язык",
     "description": "Select for language."

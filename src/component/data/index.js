@@ -18,6 +18,31 @@ import { clearChildNode } from '../../utility/clearChildNode';
 
 const data = {};
 
+const resolveAppPayload = (rawPayload) => {
+  if (!rawPayload || typeof rawPayload !== 'object') {
+    return false;
+  }
+
+  const appKey = APP_NAME;
+  const appKeyLower = APP_NAME.toLowerCase();
+
+  if (rawPayload[appKey] || rawPayload[appKeyLower]) {
+    return rawPayload;
+  }
+
+  if (rawPayload.data) {
+    if (typeof rawPayload.data === 'object') {
+      return resolveAppPayload(rawPayload.data);
+    }
+
+    if (typeof rawPayload.data === 'string' && isJson(rawPayload.data)) {
+      return resolveAppPayload(JSON.parse(rawPayload.data));
+    }
+  }
+
+  return false;
+};
+
 data.set = (key, data) => {
   window.localStorage.setItem(key, data);
 };
@@ -75,7 +100,33 @@ data.import = {
     });
   },
   render: (dataToImport) => {
-    let dataToCheck = JSON.parse(dataToImport);
+    let importString;
+
+    if (typeof dataToImport === 'string') {
+      importString = dataToImport;
+    } else {
+      importString = JSON.stringify(dataToImport);
+    }
+
+    let parsed;
+
+    try {
+      parsed = JSON.parse(importString);
+    } catch (error) {
+      console.error('Failed to parse data provided for import.', error);
+      return;
+    }
+
+    const payload = resolveAppPayload(parsed);
+
+    if (!payload) {
+      console.error('Import payload is missing required application data.');
+      return;
+    }
+
+    const payloadString = JSON.stringify(payload);
+
+    let dataToCheck = JSON.parse(payloadString);
 
     if (dataToCheck.version !== version.number) {
       dataToCheck = data.update(dataToCheck);
@@ -94,7 +145,7 @@ data.import = {
       width: 'small',
       successAction: () => {
         if (data.import.state.setup.include || data.import.state.theme.include || data.import.state.bookmark.include) {
-          let dataToRestore = JSON.parse(dataToImport);
+          let dataToRestore = JSON.parse(payloadString);
 
           if (dataToRestore.version !== version.number) {
             data.backup(dataToRestore);
@@ -126,14 +177,16 @@ data.validate = {
     navigator.clipboard.readText().then(clipboardData => {
       // is the data a JSON object
       if (isJson(clipboardData)) {
-        // is this JSON from this app
-        if (JSON.parse(clipboardData)[APP_NAME] || JSON.parse(clipboardData)[APP_NAME.toLowerCase()]) {
+        const parsedClipboard = JSON.parse(clipboardData);
+        const payload = resolveAppPayload(parsedClipboard);
+
+        if (payload) {
           data.feedback.clear.render(feedback);
 
           data.feedback.success.render(feedback, 'Clipboard data', () => {
             menu.close();
 
-            data.import.render(clipboardData);
+            data.import.render(payload);
           });
         } else {
           data.feedback.clear.render(feedback);
@@ -163,16 +216,20 @@ data.validate = {
 
     // define the on load event for the reader
     reader.onload = (event) => {
+      const fileContent = event.target.result;
+
       // is this a JSON file
-      if (isJson(event.target.result)) {
-        // is this JSON from this app
-        if (JSON.parse(event.target.result)[APP_NAME] || JSON.parse(event.target.result)[APP_NAME.toLowerCase()]) {
+      if (isJson(fileContent)) {
+        const parsedFile = JSON.parse(fileContent);
+        const payload = resolveAppPayload(parsedFile);
+
+        if (payload) {
           data.feedback.clear.render(feedback);
 
           data.feedback.success.render(feedback, fileList[0].name, () => {
             menu.close();
 
-            data.import.render(event.target.result);
+            data.import.render(payload);
           });
 
           if (input) { input.value = ''; }
@@ -456,18 +513,102 @@ data.feedback.animation = {
 };
 
 data.remote = {
+  config: () => {
+    const remoteState = state.get.current().remote || {};
+    const baseUrl = (remoteState.url || '').trim().replace(/\/+$/, '');
+    const password = (remoteState.password || '').trim();
+
+    return { baseUrl, password };
+  },
+  ensureConfig: () => {
+    const config = data.remote.config();
+
+    if (!config.baseUrl) {
+      throw new Error('Remote sync URL is not configured.');
+    }
+
+    if (!config.password) {
+      throw new Error('Remote sync password is not configured.');
+    }
+
+    return config;
+  },
+  healthCheck: async (baseUrl) => {
+    const response = await fetch(`${baseUrl}/api/health`, {
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Remote health check failed with status ${response.status}`);
+    }
+
+    return response;
+  },
   import: async () => {
-    let url = state.get.current().remote.url;
     try {
-      const response = await fetch(url);
-      const jsonData = await response.json();
+      const { baseUrl, password } = data.remote.ensureConfig();
+
+      await data.remote.healthCheck(baseUrl);
+
+      const response = await fetch(`${baseUrl}/api/sync/data?password=${encodeURIComponent(password)}`, {
+        headers: { 'Accept': 'application/json' }
+      });
+
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`Remote import failed with status ${response.status}`);
       }
+
+      const jsonData = await response.json();
+
+      if (jsonData && jsonData.success === false) {
+        const errorMessage = jsonData.message || 'Remote import reported failure.';
+        throw new Error(errorMessage);
+      }
+
+      const payload = resolveAppPayload(jsonData);
+
+      if (!payload) {
+        throw new Error('Remote import payload is missing expected data.');
+      }
+
       menu.close();
-      data.import.render(JSON.stringify(jsonData));
+      data.import.render(payload);
     } catch (e) {
-      console.log(e);
+      console.error(e);
+      throw e;
+    }
+  },
+  export: async () => {
+    try {
+      const { baseUrl, password } = data.remote.ensureConfig();
+      const currentData = data.load();
+
+      if (!currentData) {
+        throw new Error('No data found to export.');
+      }
+
+      await data.remote.healthCheck(baseUrl);
+
+      const response = await fetch(`${baseUrl}/api/sync/data`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          password: password,
+          data: currentData
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Remote export failed with status ${response.status}`);
+      }
+
+      console.log('Remote data export complete');
+    } catch (e) {
+      console.error(e);
+      throw e;
     }
   }
 };
